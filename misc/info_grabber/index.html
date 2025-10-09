@@ -2,64 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Information</title>
+    <title>Security Probe - PoC</title>
     <style>
-        body {
-            font-family: sans-serif;
-            background-color: #f0f0f0;
-            margin: 40px;
-        }
-        .info-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #555;
-        }
+        body { background-color: #111; color: #0f0; font-family: 'Courier New', monospace; padding: 20px; }
+        pre { background-color: #222; padding: 15px; border: 1px solid #0f0; white-space: pre-wrap; word-wrap: break-word; }
     </style>
 </head>
 <body>
-<!--Use test2.html instead-->
-    <div class="info-container">
-        <h1>Your Information</h1>
-        <p id="userInfo"></p>
-    </div>
+    <h1>Data Captured from Visitor</h1>
+    <pre id="info-block">Gathering information, please wait...</pre>
 
     <script>
-        async function getUserInfo() {
-            let userInfo = 'Your Information:\n';
+        async function gatherInfo() {
+            const info = {};
 
-            // Get IP Address from ipify API
+            // 1. Get detailed IP and Geo info from a new, HTTPS-friendly API
             try {
-                const response = await fetch('https://api.ipify.org?format=json');
-                const data = await response.json();
-                userInfo += `IP Address: ${data.ip}\n`;
-            } catch (error) {
-                console.error('Error fetching IP address:', error);
-                userInfo += 'IP Address: Not available\n';
+                // PIVOT: Switched from ip-api.com to ipinfo.io, which supports HTTPS on its free tier.
+                const response = await fetch('https://ipinfo.io/json');
+                const ipData = await response.json();
+                info['IP Information'] = ipData;
+            } catch (e) {
+                info['IP Information'] = { error: 'Could not fetch IP details.', details: e.message };
             }
 
-            // Get other user information from the browser
-            userInfo += `User-Agent: ${navigator.userAgent}\n`;
-            userInfo += `Platform: ${navigator.platform}\n`;
-            userInfo += `Language: ${navigator.language}\n`;
-            userInfo += `Screen Resolution: ${screen.width}x${screen.height}\n`;
-            userInfo += `Available Screen Height: ${screen.availHeight}px\n`;
-            userInfo += `Available Screen Width: ${screen.availWidth}px\n`;
-            userInfo += `Color Depth: ${screen.colorDepth}-bit\n`;
+            // 2. Gather Browser & System Info (This part remains the same)
+            info['Browser Environment'] = {
+                userAgent: navigator.userAgent,
+                platform: navigator.platform,
+                language: navigator.language,
+                languages: navigator.languages,
+                vendor: navigator.vendor,
+                webdriver: navigator.webdriver || 'Not reported',
+                deviceMemory: navigator.deviceMemory || 'Not reported',
+                hardwareConcurrency: navigator.hardwareConcurrency || 'Not reported',
+            };
 
-            // Display the information
-            document.getElementById('userInfo').innerText = userInfo;
+            // 3. Screen Information
+            info['Screen Details'] = {
+                resolution: `${screen.width}x${screen.height}`,
+                availableResolution: `${screen.availWidth}x${screen.availHeight}`,
+                colorDepth: screen.colorDepth,
+                pixelDepth: screen.pixelDepth,
+            };
+            
+            // 4. Timezone and Date
+            info['Time Information'] = {
+                systemTime: new Date().toString(),
+                timezoneOffset: `GMT${-new Date().getTimezoneOffset() / 60}`,
+            };
+
+            // Display the collected data as a formatted JSON string
+            document.getElementById('info-block').textContent = JSON.stringify(info, null, 2);
         }
 
-        getUserInfo();
+        gatherInfo();
     </script>
-
 </body>
 </html>
