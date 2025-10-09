@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>numbers</title>
+        <script src="../js/functions.js"></script>
+    </head>
+    <body>
+        <label for="Text">Unprotected text box:</label>
+        <input type="number" id="number" name="number" placeholder="PLEASE TYPE IN ME">
+        <script>document.getElementById("number").innerHTML = numberToWords(number);</script>
+        <p><button type="button" onclick="alert(numberToWords(number))">button1</button></p>
+    </body>
+</html>
