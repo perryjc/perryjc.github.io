@@ -1,8 +1,11 @@
 body{background-color:white;}
-            table, tr, th, td{
-                padding: 20px;
-                text-align: left;
-                border-collapse: collapse;
-                border-bottom: 1px solid #ddd;
-                tr:hover {background-color: coral;}
-             }
+table, tr, th, td{
+    padding: 20px;
+    text-align: left;
+    border-collapse: collapse;
+    border-bottom: 1px solid #ddd;
+    tr:hover {background-color: coral;}
+}
+#info{
+    background-color: lightsteelblue;
+}
