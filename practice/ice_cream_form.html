@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>cream lol</title>
+        <script src="../js/validate.js"></script>
+
+    </head>
+    <body>
+        <form action="http://httpbin.org/post" method="post">
+            <p><input type="email" name="email">
+            What is your email address?
+            </input></p>
+            <p><input type="tel" name="number">
+            What is your phone number?
+            </input></p>
+            <p><input type="number" name="extra_guests">
+            How many people will you bring with you to the party?
+            </input></p>
+            <fieldset>
+            <legend> What is your favorite flavor of ice cream? </legend>
+            <p><label> <input type=radio name=icecream value="vanilla"> Vanilla </label></p>
+            <p><label> <input type=radio name=icecream value="chocolate_chip"> Chocolate Chip </label></p>
+            <p><label> <input type=radio name=icecream value="strawberry"> Strawberry </label></p>
+            <p><label> <input type=radio name=icecream value="other"> other </label></p>
+            </fieldset>
+            <fieldset>
+            <legend> Which toppings do you like? </legend>
+            <p><label> <input type=checkbox name="topping" value="sprinkles"> Sprinkles </label></p>
+            <p><label> <input type=checkbox name="topping" value="magic_shell"> Magic Shell </label></p>
+            <p><label> <input type=checkbox name="topping" value="chocolate_chips"> Chocolate Chips </label></p>
+            <p><label> <input type=checkbox name="topping" value="gummy_bears"> Gummy Bears </label></p>
+            <p><label> <input type=checkbox name="topping" value="other"> Other </label></p>
+            </fieldset>
+            <p><p><label> <input type=checkbox name="topping" value="gummy_bears"> Gummy Bears </label></p>
+            </p>
+            <label for="entertainment">What kind of entertainment should we have at the party?</label>
+            <select id="entertainment" name="entertainment">
+            <option value="choose">Choose</option>
+            <option value="balloon_animals">Balloon Animals</option>
+            <option value="bounce_house">Bounce House</option>
+            <option value="clown">Clown</option>
+            <option value="cornhole">Cornhole</option>
+            <option value="face_painting">Face Painting</option>
+            <option value="dj">DJ</option>
+            <option value="magician">Magician</option>
+            </select>
+            <p><input type="text" name="comments">
+            Do you have any other suggestions or comments?
+            </input></p>
+            <button type="submit" name="submit">
+                submit
+            </button>        
+        </form>
+    </body>
+</html>
