@@ -1,0 +1,11 @@
+body{
+    background-color:white;
+    font-family: 'Times New Roman', Times, serif; 
+}
+table, tr, th, td{
+    border: #000000 1px solid;
+    border-collapse: separate 
+}
+#info{
+    background-color: whitesmoke;
+}
