@@ -1,11 +1,16 @@
-body{background-color:white;}
+body{
+    background-color:white;
+    font-family: 'Times New Roman', Times, serif; 
+}
 table, tr, th, td{
     padding: 20px;
     text-align: left;
+    margin-left: auto;
+    margin-right: auto;
     border-collapse: collapse;
     border-bottom: 1px solid #ddd;
     tr:hover {background-color: coral;}
 }
 #info{
-    background-color: lightsteelblue;
+    background-color: whitesmoke;
 }
