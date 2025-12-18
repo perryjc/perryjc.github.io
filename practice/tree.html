@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../js/validate.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree lmfao</title>
+    <style>
+        body{
+            background: linear-gradient(to bottom, navy, cyan);
+            height:100vw; 
+        }
+        #contaner{
+            position: relative;
+            width: 600px;
+            height: 800px;
+            top: 550px;
+            display: block;
+            margin: auto;
+            /*background-color: antiquewhite;*/
+        }
+        #trunk{
+            position: absolute;
+            background-color: brown;
+            width: 50px;
+            height: 80px;
+            left: 700px;
+            top: 1350px;
+        }
+        #tree{
+            width: 0px;
+            height: 0px;
+            border-bottom: 800px solid green;
+            border-left: 300px solid transparent;
+            border-right: 300px solid transparent;
+        }
+        #box{
+            position: absolute;
+            background-color: red;
+            width: 20px;
+            height: 20px;
+            left: 250px;
+            top: 500px;
+        }
+        #sparkle{
+            position: absolute;
+            top: 550px;
+            left: 350px;
+            height: 50px;
+            width: 25px;
+            background: #EDC951;
+            mask: radial-gradient(#0000 71%, #000 72%) 10000% 10000%/99.5% 99.5%; 
+        }
+        #ball1{
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: blue;
+            border-radius: 50%;
+            left: 300px;
+            top: 400px;
+        }
+        #star{
+            position: absolute;
+            right: 200px;
+            width: 200px;  
+            aspect-ratio: 1.5;
+            background: #F8CA00;
+            clip-path: polygon(50% 0,
+            calc(50%*(1 + sin(.4turn))) calc(50%*(1 - cos(.4turn))),
+            calc(50%*(1 - sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+            calc(50%*(1 + sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+            calc(50%*(1 - sin(.4turn))) calc(50%*(1 - cos(.4turn))) 
+            ); 
+        }
+    </style>
+</head>
+<body>
+    <div id="trunk"></div>
+    <div id="contaner">
+        <div id="tree">
+            <div id="sparkle"></div>
+            <div id="ball1"></div>
+            <div id="star"></div>
+            <div id="box"></div>
+        </div>
+    </div>
+</body>
+</html>
