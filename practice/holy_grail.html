@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grail</title>
+    <script src="../js/validate.js"></script>
+    <style>
+        .layout{
+           display: grid;
+           height: 100vh;
+           grid:
+            'head head head' 1fr
+            'menu main menu2' 3fr
+            'foot foot foot' 1fr
+            /1fr 3fr 1fr; 
+        }
+        #header{
+            grid-area: head;
+            width: 100%;
+            height: 100%;
+            background-color: green;
+            text-align: center;
+            font-size: 24px;
+            color: white;
+        }
+        #main{
+            grid-area: main;
+            width: 100%;
+            height: 100%;
+            background-color: green;
+            text-align: center;
+            font-size: 24px;
+            color: white;
+        }
+        #foot{
+            grid-area: foot;
+            width: 100%;
+            height: 100%;
+            background-color: green;
+            text-align: center;
+            font-size: 24px;
+            color: white;
+        }
+        #side1{
+            grid-area: menu;
+            width: 100%;
+            height: 100%;
+            background-color: green;
+            text-align: center;
+            font-size: 24px;
+            color: white;
+        }
+        #side2{
+            grid-area: menu2;
+            width: 100%;
+            height: 100%;
+            background-color: green;
+            text-align: center;
+            font-size: 24px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <div id="header">header</div>
+        <div id="main">main</div>
+        <div id="side1">side</div>
+        <div id="side2">side</div>
+        <div id="foot">Foot</div>
+    </div>
+</body>
+</html>
