@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan's wisdom removals and catering</title>
+    <style>
+        .layout{
+           display: grid;
+           height: 100vh;
+           grid:
+            'head head head' 1fr
+            'menu main menu2' 3fr
+            'foot foot foot' 1fr
+            /1fr 3fr 1fr; 
+        }
+        #header{
+            grid-area: head;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            text-align: center;
+            font-size: 24px;
+            color: #ff1493;
+        }
+        #main{
+            grid-area: main;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            text-align: center;
+            font-size: 24px;
+            color: #ff1493;
+        }
+        #foot{
+            grid-area: foot;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            text-align: center;
+            font-size: 24px;
+            color: #ff1493;
+        }
+        #side1{
+            grid-area: menu;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            text-align: center;
+            font-size: 24px;
+            color: #ff1493;
+        }
+        #side2{
+            grid-area: menu2;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            text-align: center;
+            font-size: 24px; 
+            color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <div id="header"><h1><strong>Ryan's wisdom teeth removals and entertainment</strong></h1></div>
+        <div id="main">
+            <h1><strong>About me</strong></h1>
+        </div>
+        <div id="side1">
+            <img src="../images/ryan.jpg" alt="Ryan" style="width:auto;">
+            <p>In my free time I enjoy portrait photography</p>
+            <!--By U.S. Marshals Service, Miami, Florida - Immediate source: <a rel="nofollow" class="external text" href="https://www.newyorker.com/news/daily-comment/manuel-noriega-a-thug-of-a-different-era">The New Yorker article</a>, Public Domain, <a href="https://commons.wikimedia.org/w/index.php?curid=172022488">Link</a>-->
+        </div>
+        <div id="side2">side</div>
+        <div id="foot">Foot</div>
+    </div>
+    
+</body>
+</html>
