@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserve</title>
+    <style>
+        p{
+            color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: #ff1493;">Reserve a visit from Ryan</h1>
+    <form action="http://httpbin.org/post" method="post">
+        <p><input type="email" name="email" placeholder="email@gmail.com">
+            What is your email address?
+        </input></p>
+        <p><input type="tel" name="number" placeholder="+1 (555)-555-5555">
+            What is your phone number?
+        </input></p>
+        <textarea name="message" rows="10" cols="30" placeholder="Address"></textarea>
+        <fieldset>
+            <legend style="color: #ff1493;">Payment method</legend>
+            <p><label> <input type=radio name=payment value="cattle"> Cattle </label></p>
+            <p><label> <input type=radio name=payment value="War-bonds"> War-bonds </label></p>
+            <p><label> <input type=radio name=payment value="teeth"> Enamel futures </label></p>
+            <p><label> <input type=radio name=payment value="cold-hard"> Bolivianos </label></p>
+            <p><label> <input type=radio name=payment value="connects-the-world"> Visa </label></p>
+        </fieldset>
+        <br><br>
+        <input type="submit">
+    </form>
+</body>
+</html>
