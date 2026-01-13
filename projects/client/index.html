@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charlie</title>
+    <style>
+        body{
+            background-color: seashell;
+        }
+        .layout{
+           display: grid;
+           height: 150vh;
+           grid:
+            'menu head head' 1fr
+            'menu main main' 3fr
+            'foot foot foot' 1fr
+            /1fr 2fr 2fr; 
+        }
+        #header{
+            grid-area: head;
+            width: 100%;
+            height: 100%;
+            background-color: seashell;
+            text-align: center;
+            font-size: 24px;
+            color: black;
+        }
+        #main{
+            grid-area: main;
+            width: 100%;
+            height: 100%;
+            background-color: red;
+            text-align: center;
+            font-size: 24px;
+            color: black;
+        }
+        #side1{
+            grid-area: menu;
+            width: 100%;
+            height: 100%;
+            background-color: green;
+            text-align: center;
+            font-size: 24px;
+            color: black;
+        }
+        #foot{
+            grid-area: foot;
+            width: 100%;
+            height: 100%;
+            background-color: blue;
+            text-align: center;
+            font-size: 24px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <div id="header">
+            <h1>Balls</h1>
+        </div>
+        <div id="side1"></div>
+        <div id="main"></div>
+        <div id="foot">
+            <p><a href="mailto:nbtalbotlilly@gmail.com">My Email</a></p>
+            <p><a href="tel:571-540-1295">My phone number</a></p>
+        </div>
+    </div>
+</body>
+</html>
