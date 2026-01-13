@@ -48,10 +48,17 @@
             grid-area: foot;
             width: 100%;
             height: 100%;
-            background-color: blue;
-            text-align: center;
+            background-color: seashell;
+            text-align: left;
             font-size: 24px;
             color: black;
+        }
+        #foot ul {
+            list-style-position: inside; /* Keeps bullets inside the grid area */
+            padding-left: 20px;         /* Adds a little space from the edge */
+        }
+        #foot li {
+            margin-bottom: 15px;
         }
     </style>
 </head>
@@ -63,8 +70,11 @@
         <div id="side1"></div>
         <div id="main"></div>
         <div id="foot">
-            <p><a href="mailto:nbtalbotlilly@gmail.com">My Email</a></p>
-            <p><a href="tel:571-540-1295">My phone number</a></p>
+            <ul>
+                <li><a href="file:///Users/james/Desktop/JP-2025_WEBSITE/practice/EyeAcid.html">Resume</a></li>
+                <li><a href="tel:571-540-1295">+1-(571)540-1295</a></li>
+                <li><a href="mailto:nbtalbotlilly@gmail.com">nbtalbotlilly@gmail.com</a></li>
+            </ul>
         </div>
     </div>
 </body>
