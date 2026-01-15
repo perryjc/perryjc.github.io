@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charlie</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <style>
         body{
             background-color: seashell;
@@ -14,7 +15,7 @@
            grid:
             'menu head head' 1fr
             'menu main main' 3fr
-            'foot foot foot' 1fr
+            'foot1 foot foot' 1fr
             /1fr 2fr 2fr; 
         }
         #header{
@@ -44,6 +45,7 @@
             font-size: 24px;
             color: black;
         }
+        /*Use #073642 if he doesnt pick anything*/
         #foot{
             grid-area: foot;
             width: 100%;
@@ -53,13 +55,80 @@
             font-size: 24px;
             color: black;
         }
+        #foot1{
+            grid-area: foot1;
+            width: 100%;
+            height: 100%;
+            background-color: seashell;
+            text-align: left;
+            font-size: 24px;
+            color: black;
+        }
         #foot ul {
             list-style-position: inside; /* Keeps bullets inside the grid area */
-            padding-left: 20px;         /* Adds a little space from the edge */
+            padding-left: 5px;         /* Adds a little space from the edge */
         }
         #foot li {
             margin-bottom: 15px;
         }
+        .social{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 10fr;
+            grid-template-rows: 1fr 1fr;
+            width: 100%;
+            height: 100%;
+        }
+        .fa-solid {
+            padding: 10px;
+            font-size: 30px;
+            width: 30px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 50%;
+            margin: auto;
+            grid-row-start: 2;
+        }
+        .fa-solid:hover {
+            opacity: 0.7;
+        }
+        .fa-brands {
+            padding: 10px;
+            font-size: 30px;
+            width: 30px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 50%;
+            margin: auto;
+            grid-row-start: 2;
+        }
+        .fa-brands:hover {
+            opacity: 0.7;
+        }
+        .fa-square-youtube {
+            background: #bb0000;
+            color: white;
+        }
+        .fa-linkedin {
+            background: #007bb5;
+            color: white;
+        }
+        .fa-instagram {
+            background: #125688;
+            color: white;
+        }
+        .fa-pinterest {
+            background: #318a0b;
+            color: white;
+        }
+        .fa-tiktok {
+            background: rgb(143, 23, 143);
+            color: white;
+        }
+        .fa-bugs{
+            background: rgb(44, 64, 191);
+            color: white;
+        }
+
     </style>
 </head>
 <body>
@@ -70,6 +139,16 @@
         <div id="side1"></div>
         <div id="main"></div>
         <div id="foot">
+            <div class="social"> 
+                <a href="https://www.instagram.com/char113ie/" class="fa-brands fa-instagram"></a>
+                <a href="#" class="fa-brands fa-linkedin"></a>
+                <a href="#" class="fa-brands fa-square-youtube"></a>
+                <a href="#" class="fa-brands fa-pinterest"></a>
+                <a href="#" class="fa-brands fa-tiktok"></a>
+                <a href="#" class="fa-solid fa-bugs"></a>
+            </div>
+        </div>
+        <div id="foot1">
             <ul>
                 <li><a href="file:///Users/james/Desktop/JP-2025_WEBSITE/practice/EyeAcid.html">Resume</a></li>
                 <li><a href="tel:571-540-1295">+1-(571)540-1295</a></li>
