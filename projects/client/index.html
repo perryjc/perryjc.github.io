@@ -14,7 +14,7 @@
            height: 150vh;
            grid:
             'menu head head' 1fr
-            'menu main main' 3fr
+            'menu main main' 2fr
             'foot1 foot foot' 1fr
             /1fr 2fr 2fr; 
         }
@@ -22,16 +22,16 @@
             grid-area: head;
             width: 100%;
             height: 100%;
-            background-color: seashell;
+            background-color: #073642;
             text-align: center;
             font-size: 24px;
-            color: black;
+            color: seashell;
         }
         #main{
             grid-area: main;
             width: 100%;
             height: 100%;
-            background-color: red;
+            background-color: #073642;
             text-align: center;
             font-size: 24px;
             color: black;
@@ -50,7 +50,7 @@
             grid-area: foot;
             width: 100%;
             height: 100%;
-            background-color: seashell;
+            background-color: #073642;
             text-align: left;
             font-size: 24px;
             color: black;
@@ -59,10 +59,13 @@
             grid-area: foot1;
             width: 100%;
             height: 100%;
-            background-color: seashell;
+            background-color: #073642;
             text-align: left;
             font-size: 24px;
-            color: black;
+            color: seagreen;
+        }
+        #foot1 a{
+            color: seagreen;
         }
         #foot ul {
             list-style-position: inside; /* Keeps bullets inside the grid area */
@@ -75,6 +78,7 @@
         /* Slideshow container */
         .slideshow-container {
         max-width: 100%;
+        max-height: 100%;
         position: relative;
         margin: auto;
         }
@@ -82,6 +86,7 @@
         /* Hide the images by default */
         .mySlides {
         display: none;
+        height: 100%;
         }
 
         /* Next & previous buttons */
@@ -231,19 +236,19 @@
                 <!-- Full-width images with number and caption text -->
                 <div class="mySlides fade">
                     <div class="numbertext">1 / 3</div>
-                    <img src="media/test.jpg" style="width: 640px">
+                    <img src="media/test.jpg">
                     <div class="text">Caption Text</div>
                 </div>
 
                 <div class="mySlides fade">
                     <div class="numbertext">2 / 3</div>
-                    <img src="media/test2.jpg" style="width: 640px;">
+                    <img src="media/test2.jpg">
                     <div class="text">Caption Two</div>
                 </div>
 
                 <div class="mySlides fade">
                     <div class="numbertext">3 / 3</div>
-                    <img src="media/test3.jpg" style="width: 640px;">
+                    <img src="media/test3.jpg">
                     <div class="text">Caption Three</div>
                 </div>
 
