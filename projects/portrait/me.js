@@ -74,5 +74,9 @@ ctx.stroke();
 ctx.fillStyle = "#eab880";
 ctx.fill();
 
+//square
+ctx.fillStyle = "black";
+ctx.fillRect(100, 200, 100, 25);
+
 
         
