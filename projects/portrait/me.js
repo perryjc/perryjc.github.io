@@ -78,5 +78,51 @@ ctx.fill();
 ctx.fillStyle = "black";
 ctx.fillRect(100, 200, 100, 25);
 
+//ellipse
+ctx.beginPath();
+ctx.ellipse(400, 250, //x,y
+50, 25,//major minor axis
+Math.PI*1, //rotation
+0, 2*Math.PI); //start and end angle
+ctx.strokeStyle = "black";
+ctx.lineWidth = 5;
+ctx.stroke();
+ctx.fillStyle = "white";
+ctx.fill();
 
+//ellipse
+ctx.beginPath();
+ctx.ellipse(500, 250, //x,y
+50, 25,//major minor axis
+Math.PI*1, //rotation
+0, 2*Math.PI); //start and end angle
+ctx.strokeStyle = "black";
+ctx.lineWidth = 5;
+ctx.stroke();
+ctx.fillStyle = "white";
+ctx.fill();
+
+//ellipse
+ctx.beginPath();
+ctx.ellipse(490, 250, //x,y
+25, 12.5,//major minor axis
+Math.PI*1/2, //rotation
+0, 2*Math.PI); //start and end angle
+ctx.strokeStyle = "black";
+ctx.lineWidth = 5;
+ctx.stroke();
+ctx.fillStyle = "black";
+ctx.fill();
+
+//ellipse
+ctx.beginPath();
+ctx.ellipse(390, 250, //x,y
+25, 12.5,//major minor axis
+Math.PI*1/2, //rotation
+0, 2*Math.PI); //start and end angle
+ctx.strokeStyle = "black";
+ctx.lineWidth = 5;
+ctx.stroke();
+ctx.fillStyle = "black";
+ctx.fill();
         
