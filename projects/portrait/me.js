@@ -64,6 +64,10 @@ ctx.stroke();
 ctx.fillStyle = "#e1b0de";
 ctx.fill();
 
+//hair
+ctx.fillStyle = "black";
+ctx.fillRect(450, 100, 100, 25);
+
 //first draw shape
 ctx.beginPath();
 ctx.arc(500, 320, 200, 0, Math.PI * 2);
@@ -73,10 +77,6 @@ ctx.lineWidth = 5;
 ctx.stroke();
 ctx.fillStyle = "#eab880";
 ctx.fill();
-
-//square
-ctx.fillStyle = "black";
-ctx.fillRect(100, 200, 100, 25);
 
 //ellipse
 ctx.beginPath();
@@ -125,4 +125,52 @@ ctx.lineWidth = 5;
 ctx.stroke();
 ctx.fillStyle = "black";
 ctx.fill();
-        
+
+//cheek line left
+ctx.beginPath();
+ctx.moveTo(325, 300);
+ctx.lineTo(325, 350);
+ctx.lineTo(365, 375);
+ctx.lineTo(365, 425);
+ctx.stroke();
+
+//cheek line Right
+ctx.beginPath();
+ctx.moveTo(650, 300);
+ctx.lineTo(650, 350);
+ctx.lineTo(610, 375);
+ctx.lineTo(610, 425);
+ctx.stroke();
+
+//nose line
+ctx.beginPath();
+ctx.moveTo(425, 300);
+ctx.lineTo(425, 350);
+ctx.lineTo(400, 375);
+ctx.lineTo(400, 390);
+ctx.lineTo(410, 400);
+ctx.lineTo(450, 400);
+ctx.stroke();
+
+//hair triangle
+ctx.beginPath();
+ctx.moveTo(500,20);
+ctx.lineTo(520,100);
+ctx.lineTo(480,100);
+ctx.lineTo(500,20);
+ctx.fillStyle = "black";
+ctx.fill();
+ctx.stroke();
+
+//mouth
+ctx.beginPath();
+ctx.moveTo(400, 450);
+ctx.lineTo(500, 450);
+ctx.lineTo(500, 475);
+ctx.lineTo(400, 475);
+ctx.lineTo(400, 450);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 5;
+ctx.stroke();
+ctx.fillStyle = "white";
+ctx.fill();
