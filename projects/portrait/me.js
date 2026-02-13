@@ -7,6 +7,9 @@ ctx.fillRect(0, 0, 1000, 800);
 //square
 ctx.fillStyle = "#eab880";
 ctx.fillRect(450, 500, 100, 100);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 5;
+ctx.strokeRect(450, 500, 100, 100);
 
 //cercle
 //first draw shape
@@ -15,6 +18,9 @@ ctx.arc(500, 800, 250, 0, Math.PI * 2);
 //then fill it
 ctx.fillStyle = "purple";
 ctx.fill();
+ctx.strokeStyle = "black";
+ctx.lineWidth = 5;
+ctx.stroke();
 
 //ellipse
 ctx.beginPath();
@@ -253,4 +259,20 @@ ctx.moveTo(490, 475);
 ctx.lineTo(490, 450);
 ctx.strokeStyle = "black";
 ctx.lineWidth = 5;
+ctx.stroke();
+
+//eyebrow left
+ctx.beginPath();
+ctx.moveTo(350, 200);
+ctx.lineTo(425, 200);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 10;
+ctx.stroke();
+
+//eyebrow right
+ctx.beginPath();
+ctx.moveTo(475, 180);
+ctx.lineTo(550, 200);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 10;
 ctx.stroke();
