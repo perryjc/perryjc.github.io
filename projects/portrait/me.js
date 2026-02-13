@@ -358,3 +358,8 @@ ctx.lineTo(475, 435);
 ctx.strokeStyle = "black";
 ctx.lineWidth = 4;
 ctx.stroke();
+
+//chin
+ctx.beginPath();
+ctx.arc(500, 485, 35, Math.PI, 0.5 * Math.PI, Math.PI, true);
+ctx.stroke(); 
