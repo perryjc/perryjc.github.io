@@ -170,11 +170,13 @@ ctx.stroke();
 
 //mouth
 ctx.beginPath();
-ctx.moveTo(400, 450);
+ctx.moveTo(380, 440);
+ctx.lineTo(400, 450);
 ctx.lineTo(500, 450);
+ctx.lineTo(520, 440);
 ctx.lineTo(500, 475);
 ctx.lineTo(400, 475);
-ctx.lineTo(400, 450);
+ctx.lineTo(380, 440);
 ctx.strokeStyle = "black";
 ctx.lineWidth = 5;
 ctx.stroke();
@@ -183,8 +185,8 @@ ctx.fill();
 
 //teeth log
 ctx.beginPath();
-ctx.moveTo(400, 462);
-ctx.lineTo(500, 462);
+ctx.moveTo(390, 462);
+ctx.lineTo(510, 462);
 ctx.strokeStyle = "black";
 ctx.lineWidth = 5;
 ctx.stroke();
@@ -261,6 +263,22 @@ ctx.strokeStyle = "black";
 ctx.lineWidth = 5;
 ctx.stroke();
 
+//teeth lat10
+ctx.beginPath();
+ctx.moveTo(400, 475);
+ctx.lineTo(400, 450);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 5;
+ctx.stroke();
+
+//teeth lat11
+ctx.beginPath();
+ctx.moveTo(500, 450);
+ctx.lineTo(500, 475);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 5;
+ctx.stroke();
+
 //eyebrow left
 ctx.beginPath();
 ctx.moveTo(350, 200);
@@ -275,4 +293,68 @@ ctx.moveTo(475, 180);
 ctx.lineTo(550, 200);
 ctx.strokeStyle = "black";
 ctx.lineWidth = 10;
+ctx.stroke();
+
+//mustache part 1
+ctx.beginPath();
+ctx.moveTo(400, 410);
+ctx.lineTo(390, 435);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 4;
+ctx.stroke();
+
+//mustache part 2
+ctx.beginPath();
+ctx.moveTo(410, 410);
+ctx.lineTo(400, 435);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 4;
+ctx.stroke();
+
+//mustache part 3
+ctx.beginPath();
+ctx.moveTo(420, 410);
+ctx.lineTo(410, 435);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 4;
+ctx.stroke();
+
+//mustache part 4  
+ctx.beginPath();
+ctx.moveTo(430, 410);
+ctx.lineTo(420, 435);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 4;
+ctx.stroke();
+
+//mustache part 5
+ctx.beginPath();
+ctx.moveTo(435, 410);
+ctx.lineTo(445, 435);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 4;
+ctx.stroke();
+
+//mustache part 6
+ctx.beginPath();
+ctx.moveTo(445, 410);
+ctx.lineTo(455, 435);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 4;
+ctx.stroke();
+
+//mustache part 7
+ctx.beginPath();
+ctx.moveTo(455, 410);
+ctx.lineTo(465, 435);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 4;
+ctx.stroke();
+
+//mustache part 8
+ctx.beginPath();
+ctx.moveTo(465, 410);
+ctx.lineTo(475, 435);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 4;
 ctx.stroke();
