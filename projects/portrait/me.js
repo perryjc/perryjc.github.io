@@ -174,3 +174,83 @@ ctx.lineWidth = 5;
 ctx.stroke();
 ctx.fillStyle = "white";
 ctx.fill();
+
+//teeth log
+ctx.beginPath();
+ctx.moveTo(400, 462);
+ctx.lineTo(500, 462);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 5;
+ctx.stroke();
+
+//teeth lat1
+ctx.beginPath();
+ctx.moveTo(410, 475);
+ctx.lineTo(410, 450);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 5;
+ctx.stroke();
+
+//teeth lat2
+ctx.beginPath();
+ctx.moveTo(420, 475);
+ctx.lineTo(420, 450);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 5;
+ctx.stroke();
+
+//teeth lat3
+ctx.beginPath();
+ctx.moveTo(430, 475);
+ctx.lineTo(430, 450);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 5;
+ctx.stroke();
+
+//teeth lat4
+ctx.beginPath();
+ctx.moveTo(440, 475);
+ctx.lineTo(440, 450);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 5;
+ctx.stroke();
+
+//teeth lat5
+ctx.beginPath();
+ctx.moveTo(450, 475);
+ctx.lineTo(450, 450);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 5;
+ctx.stroke();
+
+//teeth lat6
+ctx.beginPath();
+ctx.moveTo(460, 475);
+ctx.lineTo(460, 450);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 5;
+ctx.stroke();
+
+//teeth lat7
+ctx.beginPath();
+ctx.moveTo(470, 475);
+ctx.lineTo(470, 450);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 5;
+ctx.stroke();
+
+//teeth lat8
+ctx.beginPath();
+ctx.moveTo(480, 475);
+ctx.lineTo(480, 450);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 5;
+ctx.stroke();
+
+//teeth lat9
+ctx.beginPath();
+ctx.moveTo(490, 475);
+ctx.lineTo(490, 450);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 5;
+ctx.stroke();
