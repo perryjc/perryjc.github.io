@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This is a function</title>
+</head>
+<body>
+    <h1>This is a function</h1>
+    <p>open the console with ⌥ + ⌘ + C on mac</p>
+    <canvas width="800" height="800" id="myCanvas"></canvas>
+    <script>
+        
+        console.log("Test");
+
+        function sayHi() {
+            console.log("Hi");
+        }
+
+        sayHi();
+
+        //function with input
+        function sayHiTo(name) {
+            console.log("Hi " + name);
+        }
+        sayHiTo("James");
+
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+
+        ctx.fillStyle = "#f0e68c";
+        ctx.fillRect(0, 0, 800, 800);
+        // fill a circle
+        function fillCircle(x, y, r, color) {
+            ctx.beginPath();
+            ctx.arc(x, y, r, 0, Math.PI * 2);
+            ctx.fillStyle = color;
+            ctx.fill();
+        }
+
+        //example
+        fillCircle(400, 400, 100, "green")
+    </script>
+</body>
+</html>
