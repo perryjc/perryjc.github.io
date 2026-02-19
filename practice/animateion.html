@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balls lmfao</title>
+</head>
+<body>
+    <h1>That fricken rectangle is fricken moven</h1>
+    <canvas id="myCanvas" width="1000" height="800"></canvas>
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+
+
+        //define functions
+        function drawRect(x,y) {
+            console.log("drawing rect");
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'blue';
+            ctx.fillRect(x,y,50,50);
+            ctx.fill();
+        }
+
+        function addOne(num) {
+            num += 1; 
+            return num;
+        }
+
+        let num = 1;
+
+        function animate() {
+            drawRect(num,50);
+
+            num = addOne(num);
+
+            if (num > canvas.width) {
+                num = 1;
+            }
+
+            // TODO: Add some code here 
+            //  that will change the rectangle's position
+            // FINSHED 𓀓𓂺𓁌
+
+            requestAnimationFrame(animate);
+        }
+
+        //call our function
+        animate();
+    </script>
+</body>
+</html>
