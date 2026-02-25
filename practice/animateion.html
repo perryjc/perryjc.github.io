@@ -22,30 +22,45 @@
             ctx.fill();
         }
 
-        function addOne(num) {
-            num += 1; 
-            return num;
-        }
-
         let num = 1;
-
+        let num2 = 1;
+        let time = 0;
+        let speed = 5;
         function animate() {
-            drawRect(num,50);
+            time = time + 1;
 
-            num = addOne(num);
-
-            if (num > canvas.width) {
-                num = 1;
+            if(time < 195){
+                num = num + speed;
+            }
+            if(time > 160){
+                num2 = num2 + speed;
             }
 
-            // TODO: Add some code here 
-            //  that will change the rectangle's position
-            // FINSHED 𓀓𓂺𓁌
-
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillRect(num,100,10,10);
+            ctx.fillRect(num2,100,20,20);
             requestAnimationFrame(animate);
         }
 
-        //call our function
+
+        // function animate() {
+
+        //     function addOne(num) {
+        //         num += speed; 
+        //         return num;
+        //     }
+        //     drawRect(num,50);
+
+        //     num = addOne(num);
+
+        //     if (num > 800) {
+        //         num = 1;
+        //     }
+
+
+        //     requestAnimationFrame(animate);
+        // }
+
         animate();
     </script>
 </body>
