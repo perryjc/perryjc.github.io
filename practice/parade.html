@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balls lmfao</title>
+</head>
+<body>
+    <h1>That fricken rectangle is fricken moven</h1>
+    <canvas id="myCanvas" width="1000" height="800"></canvas>
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+
+
+        //define functions
+        function drawRect(x,y) {
+            console.log("drawing rect");
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'blue';
+            ctx.fillRect(x,y,50,50);
+            ctx.fill();
+        }
+
+        let num = 1;
+        let num2 = 1;
+        let time = 0;
+        let speed = 5;
+        function animate() {
+            time = time + 1;
+
+            if(time < 195){
+                num = num + speed;
+            }
+            if(time > 160){
+                num2 = num2 + speed;
+            }
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillRect(num,100,10,10);
+            ctx.fillRect(num2,100,20,20);
+            requestAnimationFrame(animate);
+        }
+
+
+        // function animate() {
+
+        //     function addOne(num) {
+        //         num += speed; 
+        //         return num;
+        //     }
+        //     drawRect(num,50);
+
+        //     num = addOne(num);
+
+        //     if (num > 800) {
+        //         num = 1;
+        //     }
+
+
+        //     requestAnimationFrame(animate);
+        // }
+
+        animate();
+    </script>
+</body>
+</html>
