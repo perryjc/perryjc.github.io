@@ -22,8 +22,10 @@
             ctx.fill();
         }
 
+
         let num = 1;
         let num2 = 1;
+        let num3 = 1;
         let time = 0;
         let speed = 5;
         function animate() {
@@ -31,14 +33,30 @@
 
             if(time < 195){
                 num = num + speed;
+                num3 = num3 + speed * 2;
             }
-            if(time > 160){
+            if(time > 160 && time < 300){
                 num2 = num2 + speed;
+                num = num - speed;
+                num3 = num3 - speed * 2;
             }
+            if(time > 300){
+                num2 = num2 - speed;
+                num = num - speed;
+                num3 = num3 - speed;
+            }
+            if(time > 400){
+                num2 = 1;
+                num = 1;
+                num3 = 1;
+                time = 1;
+            }
+            console.log(time);
 
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.fillRect(num,100,10,10);
             ctx.fillRect(num2,100,20,20);
+            ctx.fillRect(num3,200,30,30);
             requestAnimationFrame(animate);
         }
 
