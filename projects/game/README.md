@@ -8,7 +8,47 @@ library to the first floor.
 
 ## Map
 
-[![](https://mermaid.ink/img/pako:eNptVF1v2jAU_SuenzyJVXECKeRhEgTohoqoCh3aAE0mMWDh2JFx1jLgv8-Jk7ZhzVN8zz3nftonGMmYwgBuuHyOdkRpMOsvBTBf99Rjewq0IoxfwJcvX88PGedA_qHqDHpoymIK5AboXenzuaTlrgCjxdqwf-9kQlcl0rPIu8N5TvgexPJZAC2BYoV0iEJF6R6saVwSw4LYx-iebjTQmRCU1yEXjVkcc_oh6KFHtt1dEfteAQ48NBVkT0vrwFqHJv2xKRR810BmuqjxmRxXV14uKvLvKpmJGDBdwkPXSjfRok9JDKiIK2bfQjOMuBTbekYzbGkuWhxSRY4pYUKv6uAIo1EmIs2kKIGRBSYYTTJ9MDMp7ZNSzVRyRzVgEY0UJcmqDt9h1CPRHjDxjlpKzlx0_3-SZW0ttJhmcUwFMIsj3-or03TRUKp9pWc5oZ3fldG1w6lbpxhN8xY85C2ohontxphihpTqM5h5Nr9ZbeSFwPkbSdNj7mKtU8sNpeRvxpmd4shDk83msJPyNYkCOA-EpgpU2Bk8YfSDKs0iwsFhRzZX7qEUmmX5nvA9EyZME9U691QOxEeLkLNkDYjZmQ3hfFV3GGPUJyKqhjFrFtY5RgPjb-7bWr6U0BzXAptWmTtUrKINbHJoocd3hkqyVUh2cb76acqKGSvNq5Bdq3unyNos9cEUS7kR65rF7DGtqVh94Mjp9mCeBbNPr_mV8ChL0urVqC6_Re6J2SDVeDSdkEnRC2CeIFP7GUzc0-mnzMCciU-XC2zArWIxDLTKaAMmVCUkP8JTrreE5n4mdAkD8xsTtV_Cpcg5KRG_pEwqmunNdgcDE-dgTlkaE037jGwVeXMxd5Wq0PRMw6DZ8txCBAYn-AKDtnPjOj7uuA72fQe3_AY8wsBt3mDfbXu-c9tsux18acC_RVDnpu03nU7Hb9_eOo6DsdeANGZaqrF9couX9_IPA7eYIg?type=png)](https://mermaid.live/edit#pako:eNptVF1v2jAU_SuenzyJVXECKeRhEgTohoqoCh3aAE0mMWDh2JFx1jLgv8-Jk7ZhzVN8zz3nftonGMmYwgBuuHyOdkRpMOsvBTBf99Rjewq0IoxfwJcvX88PGedA_qHqDHpoymIK5AboXenzuaTlrgCjxdqwf-9kQlcl0rPIu8N5TvgexPJZAC2BYoV0iEJF6R6saVwSw4LYx-iebjTQmRCU1yEXjVkcc_oh6KFHtt1dEfteAQ48NBVkT0vrwFqHJv2xKRR810BmuqjxmRxXV14uKvLvKpmJGDBdwkPXSjfRok9JDKiIK2bfQjOMuBTbekYzbGkuWhxSRY4pYUKv6uAIo1EmIs2kKIGRBSYYTTJ9MDMp7ZNSzVRyRzVgEY0UJcmqDt9h1CPRHjDxjlpKzlx0_3-SZW0ttJhmcUwFMIsj3-or03TRUKp9pWc5oZ3fldG1w6lbpxhN8xY85C2ohontxphihpTqM5h5Nr9ZbeSFwPkbSdNj7mKtU8sNpeRvxpmd4shDk83msJPyNYkCOA-EpgpU2Bk8YfSDKs0iwsFhRzZX7qEUmmX5nvA9EyZME9U691QOxEeLkLNkDYjZmQ3hfFV3GGPUJyKqhjFrFtY5RgPjb-7bWr6U0BzXAptWmTtUrKINbHJoocd3hkqyVUh2cb76acqKGSvNq5Bdq3unyNos9cEUS7kR65rF7DGtqVh94Mjp9mCeBbNPr_mV8ChL0urVqC6_Re6J2SDVeDSdkEnRC2CeIFP7GUzc0-mnzMCciU-XC2zArWIxDLTKaAMmVCUkP8JTrreE5n4mdAkD8xsTtV_Cpcg5KRG_pEwqmunNdgcDE-dgTlkaE037jGwVeXMxd5Wq0PRMw6DZ8txCBAYn-AKDtnPjOj7uuA72fQe3_AY8wsBt3mDfbXu-c9tsux18acC_RVDnpu03nU7Hb9_eOo6DsdeANGZaqrF9couX9_IPA7eYIg)
+```mermaid
+flowchart TD
+    A{Bike trail} -->|Pull over| B(Side of the trail)
+    A --> 1([bike_home])
+    B --> 1
+    B -->|Walk down to river| C(Creek bed)
+    C --> D1(Left tunnel)
+    C --> D2(Middle tunnel)
+    C --> D3(Right tunnel)
+    D3 --> E3(Snake)
+    E3 --> F1([Move It out the way])
+    E3 --> F2(Walk Around it)
+    F2 --> E4([Dead end])
+    D2 --> T1(long tunnel)
+    T1 --> E2([spraypaint])
+    T1 --> J1(Junction)
+    J1 --> O1(Outside)
+    O1 --> E1([Get icecream])
+    O1 --> G1(Back inside)
+    J1 --> T2(Long tunnel)
+    T2 --> E5([Sudden flood])
+    D1 --> J2(Fork)
+    J2 --> C1(Left)
+    J2 --> C2(Right)
+    J2 --> S1(SprayPaint)
+    C1 -->|Wet Feet| T3(Long Tunnel)
+    C2 -->|Happy| T3
+    S1 -->|Cool| T3
+    T3 --> J3(Offshoot)
+    J3 -->|Enter Offshoot| U1(Vertical shaft)
+    J3 -->|Contiue walkin| T4(tunnel)
+    U1 --> E6([Climb and fall])
+    U1 --> M1(Dance)
+    T4 --> W1(End of box)
+    W1 -->|Contiue into round tunnel| T5(Round tunnel)
+    T5 --> A1(Snapping turtle)
+    A1 -->|Grab its shell| A2([Bitten])
+    A1 -->|Grab legs| B1(Box)
+    A1 -->|Jump over| B1
+    B1 -->|Ladder,Random fall chance| O2{{You Win!}}
+```
 
 The player starts on the bus, and then is directed into the Commons. T
 They can explore, but must eventually make their way to rm511.
