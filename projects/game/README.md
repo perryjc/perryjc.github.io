@@ -1,4 +1,4 @@
-# Chris Needs Coffee
+# Find the sunset!
 
 ## Setting
 
@@ -50,35 +50,17 @@ flowchart TD
     B1 -->|Ladder,Random fall chance| O2{{You Win!}}
 ```
 
-The player starts on the bus, and then is directed into the Commons. T
-They can explore, but must eventually make their way to rm511.
+The player will start on the bike trail, they must eventuly navigate the tunnels to find a great spot to watch the sun set. 
 
 ## Story
 
-When the user gets to rm511, they learn that the teacher is asleep.
-They must take the teacher's coffee mug to the library, get it 
-filled, and then bring it back to the teacher.
-
-The game starts 15 minutes before the morning class bell, and each
-move costs 1 minute. So this journey must be completed in 15 moves.
-Some moves (like reading a book in the library) cost extra time.
+A curous player will conqure the deep dark concrete maddness under the city
+They will face many threats along the way. can they make it out before the sun has gone down.
 
 ## Global Variables
 
-The most important variables are
-`haveCup` and `cupIsFull`, both
-booleans that track progress in the
-story. Depending on these two variables,
-some rooms will display different things. For example, if you walk into the
-library without the cup, it will prompt you to
-read. If you walk in with the cup, it will show
-the librarian filling the cup with coffee.
-
-I also have numeric variables called `day` and `minute` which keep track of 
-time. `minute` starts at 0 and counts up
-with each move.
-
-I have a little HUD map, and use a bunch of 
-boolean variables to control which
-rooms the player has discovered. A map is only displayed after the user
-visits it.
+To start i will have the variables, FlashlightState, Time, Emotions, and CoolFactor.
+Emotions will not matter but i want to add a use for it. FlashlightState will need to be 
+true so that the player can see in the dark. Time limits the player, if they reach the end
+after the time is up, they wont see the sky, only the dark overcast sky. CoolFactor is by
+far the most inportant variable, if you dont think so, then your a nerd.  
