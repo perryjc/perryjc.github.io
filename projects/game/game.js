@@ -104,27 +104,60 @@ function CreekBed() {
     waitForInput(processInput);
 }
 
-function locationB() {
+function leftT() {
     clear();
-    print("\nYou are in location B!");
-    print("\nWhere do you want to go next? Say one of these choices:" +
-        "\n\tlocationA");
-    
-    function processInput(input){
-        if (input.toLowerCase() === "locationa") {
-            locationA();
+    print("\nYou are in the Left tunnel");
+    if (flashLightState == false) {
+            print("\n\tYou gase into the nauseating darkness" +
+                "\n\tYou hear the rush off water. theres nothing for you"+
+                "\n\tit is to dark. if only there was a way to see in the dark"+
+                "\n\tGo back");
+            function processInput(input){
+                if (input.toLowerCase() === "go back") {
+                    CreekBed();
+                } else {
+                    stayHere();
+                    waitThenCall(leftT);
+                }
+            } 
         } else {
-            stayHere();
-            waitThenCall(locationB);
+        //ended here march 9
+        print("\n\tYou step into the tunnel and see walls covered in grafitti" +
+            "\n\tThere are two paths that look the same");
+        print("\nWhere do you want to go next? Say one of these choices:" +
+        "\n\tLeft path" +
+        "\n\tRight path" + 
+        "\n\tTag the walls");
+        function processInput(input){
+            if (input.toLowerCase() === "left path") {
+                locationA();
+            } else if (input.toLowerCase() === "right path") {
+                locationB();
+            } else if (input.toLowerCase() === "tag the walls") {
+                tagWalls();
+            } else {
+                stayHere();
+                waitThenCall(leftT);
+            }
         }
+        waitForInput(processInput);
     }
-    waitForInput(processInput);
 }
+
 //finally, make sure you customize this to tell it what should happen at the
 //very start. For this simple example, any input will bring you
 //to locationA
 function start(){
-    print("Welcome to my game! Press any key to start");
+    print("Today you must...");
+    printAscii(String.raw` 
+        _________     _________________________   ___ ___   ______________ ______________   _____________ __________   
+        \_   ___ \   /  _  \__    ___/\_   ___ \ /   |   \  \__    ___/   |   \_   _____/  /   _____/    |   \      \  
+        /    \  \/  /  /_\  \|    |   /    \  \//    ~    \   |    | /    ~    \    __)_   \_____  \|    |   /   |   \ 
+        \     \____/    |    \    |   \     \___\    Y    /   |    | \    Y    /        \  /        \    |  /    |    \
+        \______  /\____|__  /____|    \______  /\___|_  /    |____|  \___|_  /_______  / /_______  /______/\____|__  /
+                \/         \/                 \/       \/                   \/        \/          \/                \/ 
+ 
+`);
 
     function processInput(input){
             locationA();
