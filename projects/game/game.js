@@ -261,22 +261,34 @@ function verticalShaft1() {
     waitForInput(processInput);
 }
 
+//good ending
 function box1() {
     clear();
     print("\nYou are in a large outfall box");
-    print("\nDiscription of enviremnet");
+    print("\nYou step out of the round tunnel and enter a clean gray box with sun bursting in from the top." +
+        "\nThere is a ladder leading up to an open manhole."
+    );
     print("\nWhat do you do? Say one of the options:" +
         "\n\tClimb the ladder" +
         "\n\tBackpack");
-    
     function processInput(input){
         //random fall (one in 10 chance)
         let catnum = Math.floor(Math.random() * 100);
         console.log(catnum);
         if (input.toLowerCase() === "climb the ladder" && catnum < 90){
-            print("\nplaceholder end");
+            print("\nplaceholder");
         } else if (input.toLowerCase() === "climb the ladder" && catnum >= 90) {
-            print("\nplaceholder fall");
+            print("\nYou climb the rungs, these ones are dry. The sky above is a bright purple, you can taste the sunset");
+            print("\nYou miss one step and hit your head, your body goes limp and you fall");
+            print("\nYou land on your neck, you cant move even if you try");
+            print("\nThe sun gets lower and it feels colder.");
+            print("\nYou will die here, alone.");
+            print("\nTHE END");
+            print("\nPress any key to start over.")
+            function processInput(input){
+                window.location.reload();
+            }
+            waitForInput(processInput);
         } else if (input.toLowerCase() === "backpack") {
             Backpack(box1);
         } else {
