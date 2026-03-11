@@ -45,6 +45,8 @@ let minutes = 0;
 //Add a line by line loading method for the title screen.
 //Intigrate emotion and cool factor
 //Add time system
+
+//starting location
 function locationA() {
     clear();
     print("\nYou are on the Bike Trail");
@@ -68,52 +70,8 @@ function locationA() {
     }
     waitForInput(processInput);
 }
-function Backpack(room) {
-    clear();
-    print("\nYou open your backpack and find a flashlight, a water bottle, and a sandwich.");
-    print("\nWhat do you use?" +
-        "\n\tFlashlight" +
-        "\n\tWater bottle" +
-        "\n\tSandwich" +
-        "\n\tClose backpack");
-    
-    function processInput(input){
-        if (input.toLowerCase() === "flashlight" && flashLightState == false){
-            flashLightState = true;
-            print("\nYou turn your flashlight on")
-        } else if (input.toLowerCase() === "water bottle") {
-            print("\nYou take a sip of water.")
-            emotionNow = emotionNow + 1;
-        } else if (input.toLowerCase() === "sandwich") {
-            print("\nYou eat the sandwich.")
-            emotionNow = emotionNow + 1;
-        } else if (input.toLowerCase() === "close backpack") {
-            print("\nYou close your backpack.")
-            setTimeout(room,2000);
-        } else if(flashLightState == true) {
-            print("\nYour light is already on!")
-        } else {
-            print("\nI dont understand.")
-            setTimeout(Backpack,2000,room);
-        }
-    }
-    waitForInput(processInput);
-}
-function end1() {
-    clear();
-    print("\nAs you contiue rideing home your life contiues like everyone else." + 
-        " You get a day job, you merry at 30, you have 2 kids, you retire at 65, and you die at 80." +
-        "As you lay on your death bed, and all the people around you, you wonder.");
 
-    print("\n\tWas there more? What did I miss? Can I go back?") 
-    print("\n\tno.");
-    print("\n\tTHE END");
-    print("\n\tPress any key to start over.")
-    function processInput(input){
-            window.location.reload();
-    }
-    waitForInput(processInput);
-}
+
 function CreekBed() {
     clear();
     print("\nYou are in a creek bed");
@@ -141,6 +99,7 @@ function CreekBed() {
     waitForInput(processInput);
 }
 
+//Start Left Tunnel Path:
 function leftT() {
     clear();
     print("\nYou are in the Left tunnel");
@@ -230,14 +189,13 @@ function verticalShaft1() {
         "\nThere are rusty ladder rungs embedded in the walls" +
         "\nYou think you see another tunnel that seems only accessable from the top of the shaft."
     );
-    //ended march 10th
     print("\nWhat do you do? Say one of the options:" +
         "\n\tGo back" +
         "\n\tClimb the ladder" +
         "\n\tBackpack");
     
     function processInput(input){
-        if (input.toLowerCase() === "Go back") {
+        if (input.toLowerCase() === "go back") {
             Longtunnel1();
         } else if (input.toLowerCase() === "climb the ladder") {
             verticalShaftEnd();
@@ -250,6 +208,44 @@ function verticalShaft1() {
     }
     waitForInput(processInput);
 }
+//End Left Tunnel Path
+
+
+//call anytime
+
+function Backpack(room) {
+    clear();
+    print("\nYou open your backpack and find a flashlight, a water bottle, and a sandwich.");
+    print("\nWhat do you use?" +
+        "\n\tFlashlight" +
+        "\n\tWater bottle" +
+        "\n\tSandwich" +
+        "\n\tClose backpack");
+    
+    function processInput(input){
+        if (input.toLowerCase() === "flashlight" && flashLightState == false){
+            flashLightState = true;
+            print("\nYou turn your flashlight on")
+        } else if (input.toLowerCase() === "water bottle") {
+            print("\nYou take a sip of water.")
+            emotionNow = emotionNow + 1;
+        } else if (input.toLowerCase() === "sandwich") {
+            print("\nYou eat the sandwich.")
+            emotionNow = emotionNow + 1;
+        } else if (input.toLowerCase() === "close backpack") {
+            print("\nYou close your backpack.")
+            setTimeout(room,2000);
+        } else if(flashLightState == true) {
+            print("\nYour light is already on!")
+        } else {
+            print("\nI dont understand.")
+            setTimeout(Backpack,2000,room);
+        }
+    }
+    waitForInput(processInput);
+}
+
+//endings
 
 function verticalShaftEnd() {
     clear();
@@ -259,6 +255,22 @@ function verticalShaftEnd() {
     print("\nYour head hits the ground with a crack, and everything goes black."); 
     print("\nTHE END");
     print("\nPress any key to start over.")
+    function processInput(input){
+            window.location.reload();
+    }
+    waitForInput(processInput);
+}
+
+function end1() {
+    clear();
+    print("\nAs you contiue rideing home your life contiues like everyone else." + 
+        " You get a day job, you merry at 30, you have 2 kids, you retire at 65, and you die at 80." +
+        "As you lay on your death bed, and all the people around you, you wonder.");
+
+    print("\n\tWas there more? What did I miss? Can I go back?") 
+    print("\n\tno.");
+    print("\n\tTHE END");
+    print("\n\tPress any key to start over.")
     function processInput(input){
             window.location.reload();
     }
