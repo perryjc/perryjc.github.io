@@ -44,6 +44,7 @@ let minutes = 0;
 //TODO:
 //Add a line by line loading method for the title screen.
 //Intigrate emotion and cool factor
+//Mabey at the end of the game show the score.
 //Add time system
 
 //starting location
@@ -159,7 +160,7 @@ function leftT() {
 function Longtunnel1() {
     clear();
     print("\nYou are in a long tunnel");
-    print("\nYou walk through the shallow water, walls covered in swastikas and naked women, huge crickets crawl along the moist concrete." +
+    print("\nYou walk through the shallow water, walls of the square tunnel covered in swastikas and naked women, huge crickets crawl along the moist concrete." +
         "\nYou reach a point where a small tunnel splits off from the main one."
     );
     print("\nWhat do you do? Say one of the options:" +
@@ -177,6 +178,57 @@ function Longtunnel1() {
         } else {
             stayHere();
             waitThenCall(Longtunnel1);
+        }
+    }
+    waitForInput(processInput);
+}
+
+function Junction1() {
+    clear();
+    print("\nYou are at the junction.");
+    print("\nYou continue to walk through the dark damp tunnel and suddenly the low ceiling opens up into a large room." +
+        "\nAt the opposite end of the room you see a circular tunnel with a small trickel of water flowing from its lip" +
+        "\nYou see a large snapping turtle guarding its entrance. Her are eyes groggy as your light sweeps over them."
+    );
+    print("\nYou need to move her out of the way.")
+    print("\nWhat do you do? Say one of the options:" +
+        "\n\tPull her by the legs" +
+        "\n\tPick her up by the shell" +
+        "\n\tJump over her" +
+        "\n\tBackpack");
+    
+    function processInput(input){
+        if (input.toLowerCase() === "pull her by the legs") {
+            clear();
+            print("\nYou grab the turtles back legs and pull her to the side.");
+            print("\nShe trys to snap at you but cant reach.");
+            print("\nYou let her go in a safer place and she shuffles off.");
+            print("\nYou are proud of how in tune you are with nature.");
+            print("press any key to continue");
+            coolFactor = coolFactor + 5;
+            function processInput(input){
+                box1();
+            }
+            waitForInput(processInput);
+        } else if (input.toLowerCase() === "pick her up by the shell") {
+            clear();
+            print("\nYou reach down to grab the turtles shell.");
+            print("\nHer long neck stretches around and she grabs onto your finger with her sharp beak.");
+            print("\nYou hear your bone break and pain shoots through your arm.");
+            print("\nYou need to turn back, your finger is bloody and swelling.");
+            print("\nTHE END");
+            print("\n\tPress any key to start over.");
+            function processInput(input){
+                window.location.reload();
+            }
+            waitForInput(processInput);
+        } else if (input.toLowerCase() === "jump over her") {
+            box1();
+        } else if (input.toLowerCase() === "backpack") {
+            Backpack(Junction1);
+        } else {
+            stayHere();
+            waitThenCall(Junction1);
         }
     }
     waitForInput(processInput);
@@ -208,6 +260,33 @@ function verticalShaft1() {
     }
     waitForInput(processInput);
 }
+
+function box1() {
+    clear();
+    print("\nYou are in a large outfall box");
+    print("\nDiscription of enviremnet");
+    print("\nWhat do you do? Say one of the options:" +
+        "\n\tClimb the ladder" +
+        "\n\tBackpack");
+    
+    function processInput(input){
+        //random fall (one in 10 chance)
+        let catnum = Math.floor(Math.random() * 100);
+        console.log(catnum);
+        if (input.toLowerCase() === "climb the ladder" && catnum < 90){
+            print("\nplaceholder end");
+        } else if (input.toLowerCase() === "climb the ladder" && catnum >= 90) {
+            print("\nplaceholder fall");
+        } else if (input.toLowerCase() === "backpack") {
+            Backpack(box1);
+        } else {
+            stayHere();
+            waitThenCall(box1);
+        }
+    }
+    waitForInput(processInput);
+}
+
 //End Left Tunnel Path
 
 
