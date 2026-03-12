@@ -276,7 +276,7 @@ function box1() {
         let catnum = Math.floor(Math.random() * 100);
         console.log(catnum);
         if (input.toLowerCase() === "climb the ladder" && catnum < 90){
-            print("\nplaceholder");
+            goodEnd();
         } else if (input.toLowerCase() === "climb the ladder" && catnum >= 90) {
             print("\nYou climb the rungs, these ones are dry. The sky above is a bright purple, you can taste the sunset");
             print("\nYou miss one step and hit your head, your body goes limp and you fall");
@@ -338,11 +338,25 @@ function Backpack(room) {
 
 //endings
 
+function goodEnd() {
+    clear();
+    print("\nYou climb the rungs, as you reach the top and pull yourself out you can see the purple orange sunset."); 
+    print("\nYou sit down on the edge of the dry box.");
+    print("\nThe crickets are humming and the birds are chirping.");
+    print("\nYou win!");
+    print("\nTHE END");
+    print("\nPress any key to start over.");
+    function processInput(input){
+            window.location.reload();
+    }
+    waitForInput(processInput);
+}
+
 function verticalShaftEnd() {
     clear();
     print("\nYou begin to climb the slick rungs."); 
     print("\nYour arms are shaking as you struggle to keep steady");
-    print("\nSuddenly, you slip. Your hands attempt to grab around nothing as you fall down the shaft.")
+    print("\nSuddenly, you slip. Your hands attempt to grab around nothing as you fall down the shaft.");
     print("\nYour head hits the ground with a crack, and everything goes black."); 
     print("\nTHE END");
     print("\nPress any key to start over.")
@@ -358,10 +372,10 @@ function end1() {
         " You get a day job, you merry at 30, you have 2 kids, you retire at 65, and you die at 80." +
         "As you lay on your death bed, and all the people around you, you wonder.");
 
-    print("\n\tWas there more? What did I miss? Can I go back?") 
+    print("\n\tWas there more? What did I miss? Can I go back?"); 
     print("\n\tno.");
     print("\n\tTHE END");
-    print("\n\tPress any key to start over.")
+    print("\n\tPress any key to start over.");
     function processInput(input){
             window.location.reload();
     }
