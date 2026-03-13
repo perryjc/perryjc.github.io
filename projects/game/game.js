@@ -202,6 +202,22 @@ function Outside1() {
     waitForInput(processInput);
 }
 
+function Longtunnel3() {
+    clear();
+    print("\nYou are in a long tunnel");
+    print("\nAs you go deeper in you start to hear a low rumbling sound that is getting louder." +
+        "\nYou turn to run but you are knocked off your feet by the sudden rush of water." +
+        "\nYou flail around trying to grab on to anything but its no use." +
+        "\nThere is a sudden 90 degree turn and you crash directly into the hard wall."
+    );
+    print("\nTHE END")
+    print("\nPress any key to start over.");
+    function processInput(input){
+            window.location.reload();
+    }
+    waitForInput(processInput);
+}
+
 //End Middle Tunnel Path
 
 //Start Left Tunnel Path:
