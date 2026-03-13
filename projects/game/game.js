@@ -100,6 +100,59 @@ function CreekBed() {
     waitForInput(processInput);
 }
 
+//Start Middle Tunnel Path:
+
+function middleT() {
+    clear();
+    print("\nYou are in the middle tunnel");
+    if (flashLightState == false) {
+            print("\nYou gaze into the nauseating darkness" +
+                "\nYou hear the rush off water. theres nothing for you"+
+                "\nIt is to dark. if only there was a way to see in the dark");
+            print("\nPress any button to go back");
+            function processInput(input){
+                        CreekBed();
+            }
+            waitForInput(processInput);
+        } else {
+            print("\nYou gaze into the long tunnel, a frog hopps along the floor." +
+                "\nThere is grafitti on the walls. You see a light at the end."
+            );
+            //stopped here mar 12
+            print("\nWhat do you do? Say one of the options:" +
+                "\n\tGraffiti" +
+                "\n\tWalk towards the light" +
+                "\n\tBackpack");
+            
+            function processInput(input){
+                if (input.toLowerCase() === "graffiti") {
+                    print("\nYou take out the can of red spray paint from your bag and remove the cap" +
+                    "\nYou begin to mark the walls" +
+                    "\nA sudden rush of air comes from deep in the tunnel."
+                    );
+                    print("\nThe paint blows into your face, your eyes burn.");
+                    print("\nYou need to turn back.");
+                    print("\nTHE END");
+                    print("\n\tPress any key to start over.");
+                    function processInput(input){
+                        window.location.reload();
+                    }
+                    waitForInput(processInput);
+                } else if (input.toLowerCase() === "walk towards the light") {
+                    Longtunnel2();
+                } else if (input.toLowerCase() === "backpack") {
+                    Backpack(middleT);
+                } else {
+                    stayHere();
+                    waitThenCall(middleT);
+                }
+            }
+        }
+    waitForInput(processInput);
+}
+
+//End Middle Tunnel Path
+
 //Start Left Tunnel Path:
 function leftT() {
     clear();
