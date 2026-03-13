@@ -100,6 +100,8 @@ function CreekBed() {
     waitForInput(processInput);
 }
 
+
+
 //Start Middle Tunnel Path:
 
 function middleT() {
@@ -118,12 +120,10 @@ function middleT() {
             print("\nYou gaze into the long tunnel, a frog hopps along the floor." +
                 "\nThere is grafitti on the walls. You see a light at the end."
             );
-            //stopped here mar 12
             print("\nWhat do you do? Say one of the options:" +
                 "\n\tGraffiti" +
                 "\n\tWalk towards the light" +
                 "\n\tBackpack");
-            
             function processInput(input){
                 if (input.toLowerCase() === "graffiti") {
                     print("\nYou take out the can of red spray paint from your bag and remove the cap" +
@@ -148,6 +148,57 @@ function middleT() {
                 }
             }
         }
+    waitForInput(processInput);
+}
+
+function Longtunnel2() {
+    clear();
+    print("\nYou are at a junction");
+    print("\nAs you walk towards the light, you come to a fork." + 
+        "\nOn the left, light. On the right, another dark tunnel.");
+    print("\nWhat do you do? Say one of the options:" +
+        "\n\tGo towards the light" +
+        "\n\tGo deeper into the tunnel" +
+        "\n\tBackpack");
+    
+    function processInput(input){
+        if (input.toLowerCase() === "go deeper into the tunnel") {
+            Longtunnel3();
+        } else if (input.toLowerCase() === "go towards the light") {
+            Outside1();
+        } else if (input.toLowerCase() === "backpack") {
+            Backpack(Longtunnel2);
+        } else {
+            stayHere();
+            waitThenCall(Longtunnel2);
+        }
+    }
+    waitForInput(processInput);
+}
+
+function Outside1() {
+    clear();
+    print("\nYou are in a dry riverbed at the mouth of the tunnel");
+    print("\nYou step out into the light, you squnint as the sun hits your face." +
+        "\nThere is lush green ivy all around you. You are craving icecream."
+    );
+    print("\nWhat do you do? Say one of the options:" +
+        "\n\tGo get icecream" +
+        "\n\tGo back into the tunnel" +
+        "\n\tBackpack"
+    );
+    function processInput(input){
+        if (input.toLowerCase() === "go get icecream") {
+            end2();
+        } else if (input.toLowerCase() === "go back into the tunnel") {
+            Longtunnel2();
+        } else if (input.toLowerCase() === "backpack") {
+            Backpack(Outside1);
+        } else {
+            stayHere();
+            waitThenCall(Outside1);
+        }
+    }
     waitForInput(processInput);
 }
 
@@ -422,11 +473,24 @@ function verticalShaftEnd() {
 function end1() {
     clear();
     print("\nAs you contiue rideing home your life contiues like everyone else." + 
-        " You get a day job, you merry at 30, you have 2 kids, you retire at 65, and you die at 80." +
+        "You get a day job, you merry at 30, you have 2 kids, you retire at 65, and you die at 80." +
         "As you lay on your death bed, and all the people around you, you wonder.");
 
     print("\n\tWas there more? What did I miss? Can I go back?"); 
     print("\n\tno.");
+    print("\n\tTHE END");
+    print("\n\tPress any key to start over.");
+    function processInput(input){
+            window.location.reload();
+    }
+    waitForInput(processInput);
+}
+
+function end2() {
+    clear();
+    print("\nYou bushwack through the dense foliage and come to a biketrail" + 
+        "You walk along it until you are in a familiar area. " +
+        "You hop on a bus to the nearest icecream place as the sun sets.");
     print("\n\tTHE END");
     print("\n\tPress any key to start over.");
     function processInput(input){
