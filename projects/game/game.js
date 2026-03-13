@@ -144,7 +144,7 @@ function deadEnd1() {
     print("\nYou walk around the snake and into the unknown, after a few minutes you come to a dead end." + 
         "\nOn the floor sits a orange roadbike with a plastic mudguard, and a rubber duck.");
     print('"I wonder how this got here?"' + " you think to yourself.");
-    print("\n\tPress any key to go back to the creek bed.");
+    print("\n\tPress ENTER to go back to the creek bed.");
     function processInput(input){
         CreekBed();
     }
@@ -185,7 +185,7 @@ function middleT() {
                     print("\nThe paint blows into your face, your eyes burn.");
                     print("\nYou need to turn back.");
                     print("\nTHE END");
-                    print("\n\tPress any key to start over.");
+                    print("\n\tPress ENTER to start over.");
                     function processInput(input){
                         window.location.reload();
                     }
@@ -263,7 +263,7 @@ function Longtunnel3() {
         "\nThere is a sudden 90 degree turn and you crash directly into the hard wall."
     );
     print("\nTHE END")
-    print("\nPress any key to start over.");
+    print("\nPress ENTER to start over.");
     function processInput(input){
             window.location.reload();
     }
@@ -300,7 +300,7 @@ function leftT() {
                     "\nYou are uncomfortable"
                 );
                 emotionNow = emotionNow - 1;
-                print("press any key to continue");
+                print("press ENTER to continue");
                 function processInput(input){
                         Longtunnel1();
                 }
@@ -313,7 +313,7 @@ function leftT() {
                     "\nYou feel pretty cool"
                 );
                 coolFactor = coolFactor + 10;
-                print("press any key to continue");
+                print("press ENTER to continue");
                 function processInput(input){
                         Longtunnel1();
                 }
@@ -376,7 +376,7 @@ function Junction1() {
             print("\nShe trys to snap at you but cant reach.");
             print("\nYou let her go in a safer place and she shuffles off.");
             print("\nYou are proud of how in tune you are with nature.");
-            print("press any key to continue");
+            print("press ENTER to continue");
             coolFactor = coolFactor + 5;
             function processInput(input){
                 box1();
@@ -389,7 +389,7 @@ function Junction1() {
             print("\nYou hear your bone break and pain shoots through your arm.");
             print("\nYou need to turn back, your finger is bloody and swelling.");
             print("\nTHE END");
-            print("\n\tPress any key to start over.");
+            print("\n\tPress ENTER to start over.");
             function processInput(input){
                 window.location.reload();
             }
@@ -456,7 +456,7 @@ function box1() {
             print("\nThe sun gets lower and it feels colder.");
             print("\nYou will die here, alone.");
             print("\nTHE END");
-            print("\nPress any key to start over.")
+            print("\nPress ENTER to start over.")
             function processInput(input){
                 window.location.reload();
             }
@@ -517,7 +517,7 @@ function goodEnd() {
     print("\nThe crickets are humming and the birds are chirping.");
     print("\nYou win!");
     print("\nTHE END");
-    print("\nPress any key to start over.");
+    print("\nPress ENTER to start over.");
     function processInput(input){
             window.location.reload();
     }
@@ -531,7 +531,7 @@ function verticalShaftEnd() {
     print("\nSuddenly, you slip. Your hands attempt to grab around nothing as you fall down the shaft.");
     print("\nYour head hits the ground with a crack, and everything goes black."); 
     print("\nTHE END");
-    print("\nPress any key to start over.")
+    print("\nPress ENTER to start over.")
     function processInput(input){
             window.location.reload();
     }
@@ -547,7 +547,7 @@ function end1() {
     print("\n\tWas there more? What did I miss? Can I go back?"); 
     print("\n\tno.");
     print("\n\tTHE END");
-    print("\n\tPress any key to start over.");
+    print("\n\tPress ENTER to start over.");
     function processInput(input){
             window.location.reload();
     }
@@ -560,7 +560,7 @@ function end2() {
         "You walk along it until you are in a familiar area. " +
         "You hop on a bus to the nearest icecream place as the sun sets.");
     print("\n\tTHE END");
-    print("\n\tPress any key to start over.");
+    print("\n\tPress ENTER to start over.");
     function processInput(input){
             window.location.reload();
     }
@@ -573,7 +573,7 @@ function end3() {
         "You yell as your hand starts to feel hot, the snake starts to slither away." +
         "Whether it was venomous or not, you need to get out of here.");
     print("\n\tTHE END");
-    print("\n\tPress any key to start over.");
+    print("\n\tPress ENTER to start over.");
     function processInput(input){
             window.location.reload();
     }
@@ -594,7 +594,7 @@ function start(){
                 \/         \/                 \/       \/                   \/        \/          \/                \/ 
  
 `);
-    print("press any key to start");
+    print("press ENTER to start");
     function processInput(input){
             locationA();
     }
