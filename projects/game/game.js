@@ -594,6 +594,7 @@ function start(){
                 \/         \/                 \/       \/                   \/        \/          \/                \/ 
  
 `);
+    print("Made by James Perry for ITD210 - Web Page Design II - Spring 2026");
     print("press ENTER to start");
     function processInput(input){
             locationA();
