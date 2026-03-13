@@ -76,7 +76,7 @@ function locationA() {
 function CreekBed() {
     clear();
     print("\nYou are in a creek bed");
-    print("\nAs you ride along you notice a river some how appear from below the ground");
+    print("\nYou walk down to the calm water and see 3 large concreate tunnels, spilling water.");
     print("\nWhat do you do? Say one of the options:" +
         "\n\tTake the Left tunnel" +
         "\n\tTake the middle tunnel" +
@@ -101,6 +101,58 @@ function CreekBed() {
 }
 
 
+//Start Right Tunnel Path:
+
+function rightT() {
+    clear();
+    print("\nYou are in the middle tunnel");
+    if (flashLightState == false) {
+            print("\nYou gaze into the nauseating darkness" +
+                "\nYou hear the rush off water. theres nothing for you"+
+                "\nIt is to dark. if only there was a way to see in the dark");
+            print("\nPress any button to go back");
+            function processInput(input){
+                        CreekBed();
+            }
+            waitForInput(processInput);
+        } else {
+            print("\nYou gaze into the long tunnel, a snake slithers in the shallow water." +
+                "\nThere is grafitti on the walls, the sanke coils up and hisses at you."
+            );
+            print("\nWhat do you do? Say one of the options:" +
+                "\n\tMove the snake out of the way" +
+                "\n\tWalk around it" +
+                "\n\tBackpack");
+            function processInput(input){
+                if (input.toLowerCase() === "move the snake out of the way") {
+                    end3();
+                } else if (input.toLowerCase() === "walk around it") {
+                    deadEnd1();
+                } else if (input.toLowerCase() === "backpack") {
+                    Backpack(rightT);
+                } else {
+                    stayHere();
+                    waitThenCall(rightT);
+                }
+            }
+            waitForInput(processInput);
+        }
+}
+
+function deadEnd1() {
+    clear();
+    print("\nYou walk around the snake and into the unknown, after a few minutes you come to a dead end." + 
+        "\nOn the floor sits a orange roadbike with a plastic mudguard, and a rubber duck.");
+    print('"I wonder how this got here?"' + " you think to yourself.");
+    print("\n\tPress any key to go back to the creek bed.");
+    function processInput(input){
+        CreekBed();
+    }
+    waitForInput(processInput);
+}
+
+
+//End Right Tunnel Path
 
 //Start Middle Tunnel Path:
 
@@ -507,6 +559,19 @@ function end2() {
     print("\nYou bushwack through the dense foliage and come to a biketrail" + 
         "You walk along it until you are in a familiar area. " +
         "You hop on a bus to the nearest icecream place as the sun sets.");
+    print("\n\tTHE END");
+    print("\n\tPress any key to start over.");
+    function processInput(input){
+            window.location.reload();
+    }
+    waitForInput(processInput);
+}
+
+function end3() {
+    clear();
+    print("\nYou reach down to grab the snake but its head whips around and bites you." + 
+        "You yell as your hand starts to feel hot, the snake starts to slither away." +
+        "Whether it was venomous or not, you need to get out of here.");
     print("\n\tTHE END");
     print("\n\tPress any key to start over.");
     function processInput(input){
