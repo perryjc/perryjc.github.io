@@ -6,18 +6,10 @@ const inputspeed = document.getElementById('Multiplier');
 
 let image = image1;
 let x = 0;
-let vx = inputspeed.valueAsNumber;
+let vx = inputspeed.valueAsNumber || 10;
 let y = 0;
-let vy = inputspeed.valueAsNumber;
+let vy = inputspeed.valueAsNumber || 10;
 let gravity = 1;
-
-function drawRect(x,y) {
-    console.log("drawing rect");
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = 'blue';
-    ctx.fillRect(x,y,50,50);
-    ctx.fill();
-}
 
 function changeImage(newImage) {
     image = newImage;
@@ -34,9 +26,17 @@ function move() {
     if ( y > 750 || y < 0) {
         vy = vy * -1;
     }
+    if ( y == 750 && x == 750) {
+        winScript();
+    }
+    ctx.fillRect(750, 750, 60, 60);
     ctx.drawImage(image, x, y, 50, 50);
 
     requestAnimationFrame(move);
+}
+
+function winScript() {
+    window.location.replace("http://perryjc.github.io/practice/winscreen.html");
 }
 
 move();
