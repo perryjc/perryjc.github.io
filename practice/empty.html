@@ -1,22 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Empty</title>
     <style>
-        canvas {
+        .layout {
+            display: grid;
+            grid-template-columns: 800px 1fr;
+            align-items: start;
+            max-width: 100%;
+        }
+        #myCanvas {
             border: 1px solid black;
+            width: 800px;
+            height: 800px;
+            box-sizing: border-box;
+        }
+        .box {
+            padding: 16px;
+            min-height: 800px;
+            overflow: auto;
+        }
+        /* keep the image available for drawImage but hidden */
+        #cat {
+            display: none;
+        }
+        #dog {
+            display: none;
         }
     </style>
 </head>
 <body>
-    <div style="display:none;">
-    <img id="cat" width="50" height="50" src="cat3.png">
+
+    <div class="layout">
+        <canvas id="myCanvas" width="800" height="800"></canvas>
+        <div class="box">
+            <h1>Arrow keys to move</h1>
+            <p id="menuText">Click for cat</p>
+            <button onclick="changeImage(image1)">Cat button</button>
+            <p>Click for dog</p>
+            <button onclick="changeImage(image2)">Dog button</button>
+            <p><label for="speedMultiplier">Speed Multiplier:</label>
+            <input type="number" id="Multiplier" name="speedMultiplier"></p>
+
+        </div>
     </div>
-    <canvas id="myCanvas" width="800" height="800">
-    </canvas>
-    <script src="keys.js"></script>
+
+    <!-- Hidden image used by canvas drawImage() -->
+    <img id="cat" src="cat3.png" width="50" height="50" alt="cat">
+    <img id="dog" src="dog3.png" width="50" height="50" alt="dog">
+
+    <!-- Load helpers first (if needed), then the animation script after DOM elements exist -->
     <script src="../projects/game/game_helpers.js"></script>
+    <script src="keys.js"></script>
 </body>
 </html>

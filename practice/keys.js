@@ -1,14 +1,31 @@
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
-const image = document.getElementById("cat");
+const image1 = document.getElementById("cat");
+const image2 = document.getElementById("dog");
+const inputspeed = document.getElementById('Multiplier');
 
+let image = image1;
 let x = 0;
-let vx = 10;
+let vx = inputspeed.valueAsNumber;
 let y = 0;
-let vy = 10;
+let vy = inputspeed.valueAsNumber;
 let gravity = 1;
 
+function drawRect(x,y) {
+    console.log("drawing rect");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = 'blue';
+    ctx.fillRect(x,y,50,50);
+    ctx.fill();
+}
+
+function changeImage(newImage) {
+    image = newImage;
+}
+
+
 function move() {
+    console.log("Numeric value:", inputspeed.valueAsNumber); 
     ctx.clearRect(0,0, 800, 800);
 
     if ( x > 750 || x < 0) {
@@ -38,5 +55,4 @@ function handleKeydown(e) {
     }
 
 }
-
 document.addEventListener('keydown', handleKeydown);
