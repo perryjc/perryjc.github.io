@@ -22,7 +22,6 @@
             min-height: 800px;
             overflow: auto;
         }
-        /* keep the image available for drawImage but hidden */
         #cat {
             display: none;
         }
@@ -37,9 +36,8 @@
         <canvas id="myCanvas" width="800" height="800"></canvas>
         <div class="box">
             <h1>Arrow keys to move</h1>
-            <p id="menuText">Click for cat</p>
+            <h2>Modify the man:</h2>
             <button onclick="changeImage(image1)">Cat button</button>
-            <p>Click for dog</p>
             <button onclick="changeImage(image2)">Dog button</button>
             <p><label for="speedMultiplier">Speed Multiplier:</label>
             <input type="number" id="Multiplier"  placeholder="10" name="speedMultiplier"></p>

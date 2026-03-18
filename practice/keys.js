@@ -29,6 +29,7 @@ function move() {
     if ( y == 750 && x == 750) {
         winScript();
     }
+    ctx.fillStyle = 'red';
     ctx.fillRect(750, 750, 60, 60);
     ctx.drawImage(image, x, y, 50, 50);
 
