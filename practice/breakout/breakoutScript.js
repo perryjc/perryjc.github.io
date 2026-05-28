@@ -3,7 +3,6 @@ const ctx = canvas.getContext("2d");
 const ballRadius = 10;
 const paddleHeight = 10;
 const paddleWidth = 75;
-const brickRowCount = 5;
 const brickColumnCount = 10;
 const brickWidth = 75;
 const brickHeight = 20;
@@ -21,6 +20,7 @@ let dy = -2;
 let interval = 0;
 let mode = "easy";
 let score = 0;
+let brickRowCount = 5;
 let bricks = [];
 
 for (let c = 0; c < brickColumnCount; c++) {
@@ -58,6 +58,7 @@ function drawBricks() {
 function selectMode(mode) {
     if (mode === "easy") {
         newSpeed = 2;
+        brickRowCount = 3;
     } else if (mode === "medium") {
         newSpeed = 6;
     } else if (mode === "hard") {

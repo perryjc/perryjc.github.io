@@ -109,7 +109,7 @@ function rightT() {
     if (flashLightState == false) {
             print("\nYou gaze into the nauseating darkness" +
                 "\nYou hear the rush off water. theres nothing for you"+
-                "\nIt is to dark. if only there was a way to see in the dark");
+                "\nIt is to dark. if only you had a flashlight or something.");
             print("\nPress any button to go back");
             function processInput(input){
                         CreekBed();
@@ -162,7 +162,7 @@ function middleT() {
     if (flashLightState == false) {
             print("\nYou gaze into the nauseating darkness" +
                 "\nYou hear the rush off water. theres nothing for you"+
-                "\nIt is to dark. if only there was a way to see in the dark");
+                "\nIt is to dark. if only you had a flashlight or something.");
             print("\nPress any button to go back");
             function processInput(input){
                         CreekBed();

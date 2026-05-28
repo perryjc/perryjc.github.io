@@ -37,6 +37,7 @@ function move() {
 }
 
 function winScript() {
+    x = x + 1;
     window.location.replace("http://perryjc.github.io/practice/winscreen.html");
 }
 
