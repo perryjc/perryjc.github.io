@@ -8,15 +8,15 @@
 <body>
 
     <h1>All My HTML Pages</h1>
+    <h2>Some pages may be blank</h2>
     <ul id="file-list">Loading pages from all folders...</ul>
 
     <script>
-        // 1. Your exact repository details
         const username = 'perryjc';
         const repo = 'perryjc.github.io'; 
-        const branch = 'main'; // FIXED: Changed back to 'main' based on your JSON screenshot
+        const branch = 'main'; 
 
-        // 2. Build the Git Trees API URL with recursive=1 to get all subfolders in one request
+        // api call
         const apiUrl = `https://api.github.com/repos/${username}/${repo}/git/trees/${branch}?recursive=1`;
 
         fetch(apiUrl)
@@ -30,27 +30,22 @@
                 const listElement = document.getElementById('file-list');
                 listElement.innerHTML = ''; // Clear loading text
 
-                // Folders we want to completely ignore
-                const ignoredFolders = ['images/', 'favicon/', 'js/', 'node_modules/'];
+                // ignored folders
+                const ignoredFolders = ['images/', 'favicon/', 'js/', 'node_modules/', 'games/'];
 
-                // 3. Now data.tree exists, and we loop through the deep tree structure!
                 data.tree.forEach(item => {
-                    // Check if the item is a file (blob) and ends with .html
                     if (item.type === 'blob' && item.path.endsWith('.html')) {
                         
-                        // Skip files inside our ignored folders
                         const shouldIgnore = ignoredFolders.some(folder => item.path.startsWith(folder));
                         
-                        // Also skip our main index and directory files
-                        if (!shouldIgnore && item.path !== 'index.html' && item.path !== 'directory.html') {
+                        if (!shouldIgnore && item.path !== 'directory.html') {
                             
                             const listItem = document.createElement('li');
                             const link = document.createElement('a');
                             
-                            // This builds the live web link for your specific site layout
+                            // site link
                             link.href = `https://${username}.github.io/${item.path}`;
                             
-                            // Show the full path (e.g., "practice/cats-lmafa/page.html")
                             link.textContent = item.path;
                             
                             listItem.appendChild(link);
