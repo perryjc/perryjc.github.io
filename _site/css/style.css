@@ -1,0 +1,101 @@
+body {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+} 
+
+/* old body */
+/* body {
+  background-color: white;
+  min-height: 100%;
+} */
+
+nav {
+  display: flex;
+  gap: 5vw;
+  padding: 1vw;
+  border-bottom: 1px solid black;
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.hero-container {
+  display: flex;
+  align-items: center; 
+  gap: 2rem;           
+  padding: 2rem;
+}
+
+.hero-container img {
+  max-width: 300px;    
+  border-radius: 8px;
+}
+
+/* old footer */
+/* footer {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+} */
+
+/* START BLOG SHI */
+
+.project-grid {
+  display: grid;
+  /* This creates 3 columns of equal width */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.project-card {
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+
+.project-card img {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Keeps all images the same shape */
+  object-fit: cover;    /* Crops image to fit the square perfectly */
+  border-radius: 8px;
+}
+
+.project-card p {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+/* END BLOG SHI */
+footer {
+  display: flex;
+  justify-content: left; 
+  padding: 2rem;
+  margin-top: auto;
+}
+
+.social-links {
+  display: flex;
+  gap: 16px; /* Space between icons */
+}
+
+.social-links a {
+  font-size: 2rem; /* Size of the icons */
+  color: #333;      /* Icon color */
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #007bff;   /* Color change on hover */
+}
+
