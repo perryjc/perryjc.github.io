@@ -1,0 +1,2 @@
+User-agent: *
+Disallow: /spider_trap_tests/writeup/
