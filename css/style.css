@@ -45,13 +45,6 @@ nav {
   background-color: #728599;
 }
 
-@media (max-width: 768px) {
-  .hero-container {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
 .hero-container {
   display: flex;
   align-items: center; 
@@ -106,10 +99,47 @@ nav {
 /* END BLOG SHI */
 footer {
   display: flex;
-  justify-content: left; 
-  padding: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.25rem 2rem;
   margin-top: auto;
+  background-color: #e0e6e9;
+  border-top: 1px solid #dee2e6;
 }
+
+.footer-emails {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+}
+
+.footer-emails a {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s;
+}
+
+.footer-emails a i {
+  color: #28536b; 
+}
+
+.footer-emails a:hover {
+  color: #28536b;
+  text-decoration: underline;
+}
+
+.divider {
+  color: #868e96;
+  font-size: 1.1rem;
+  user-select: none;
+}
+
 
 .social-links {
   display: flex;
@@ -126,3 +156,20 @@ footer {
   color: #007bff;   /* Color change on hover */
 }
 
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-emails {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .divider {
+    display: none;
+  }
+}
